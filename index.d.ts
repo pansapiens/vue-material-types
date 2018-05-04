@@ -1,6 +1,6 @@
-//Taken from https://github.com/vuematerial/vue-material/issues/662#issuecomment-308937275
+// Taken from https://github.com/vuematerial/vue-material/issues/662#issuecomment-308937275
 
-import Vue from 'vue';
+import { PluginFunction } from 'vue';
 
 type Component = 'MdCore'
   | 'MdAvatar'
@@ -37,8 +37,8 @@ type Component = 'MdCore'
   | 'MdWhiteframe';
 
 type Options =
-  { install: Vue.PluginFunction<never>} &
-  { [key in Component]: Vue.PluginFunction<never> };
+  { install: PluginFunction<never>} &
+  { [key in Component]: PluginFunction<never> };
 
 declare const options: Options;
 export default options;
@@ -78,6 +78,7 @@ interface ThemeType {
   background?: ThemeOption;
 }
 
+/*
 declare module 'vue/types/vue' {
   namespace Vue {
     const material: {
@@ -86,3 +87,4 @@ declare module 'vue/types/vue' {
     };
   }
 }
+*/
